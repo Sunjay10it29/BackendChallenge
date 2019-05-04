@@ -27,4 +27,4 @@ Using Cron Job to download data from give link of Json data
 ### Author
 - Sunjay Kumar
 
-##### This has been developed for Test Purpose given by company Radius
+##### This has been developed for Test Purpose
