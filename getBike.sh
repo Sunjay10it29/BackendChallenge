@@ -2,7 +2,7 @@
 
 ndate=`date +%m-%d-%Y-%T`
 
-#wget http://localhost:3000/api/getBike
+wget http://localhost:3000/api/getBike
 
 #curl -X GET \
 #  https://www.rideindego.com/stations/json/ \

@@ -33,7 +33,7 @@ app.get('/api/getWeather/', function (req, res) {
         qs: { q: 'London,uk', appid: 'b6907d289e10d714a6e88b30761fae22' },
         headers:
         {
-            'postman-token': '9cb0ce83-de22-efbf-1495-ac03538c570c',
+            'Bearer-token': '9cb0ce83-de22-efbf-1495-ac03538c570c',
             'cache-control': 'no-cache'
         }
     };
@@ -117,7 +117,7 @@ app.get('/api/getBike', function (req, res) {
         url: 'https://www.rideindego.com/stations/json/',
         headers:
         {
-            'Postman-Token': '75ee6713-51e2-450b-9ab0-96e14c58c147',
+            'Bearer-Token': '75ee6713-51e2-450b-9ab0-96e14c58c147',
             'cache-control': 'no-cache'
         }
     };
@@ -126,7 +126,7 @@ app.get('/api/getBike', function (req, res) {
         if (error) throw new Error(error);
         let newBody = JSON.parse(body)
         newBody.created_at = new Date();
-        collection.insertOne(newBody, function (err, data) {
+        collectionBikes.insertOne(newBody, function (err, data) {
             if (err) throw err
             else {
                 res.json(data)
@@ -160,9 +160,6 @@ app.get('/api/v1/stations/:kioskId', function (req, res) {
         },
         {
             "$unwind": "$features"
-        },
-        {
-            "$unwind": "$features.properties"
         },
         {
             "$match": {
@@ -202,9 +199,6 @@ app.get('/api/v1/stations/:kioskId', function (req, res) {
             "$unwind": "$features"
         },
         {
-            "$unwind": "$features.properties"
-        },
-        {
             "$match": {
                 "features.properties.kioskId": Number(kioskId),
             }
@@ -217,7 +211,7 @@ app.get('/api/v1/stations/:kioskId', function (req, res) {
         }
         else {
             var results = {
-                // at: at,
+                at: at,
                 result: data
             }
             res.json(results);
@@ -233,3 +227,6 @@ module.exports = app;
 
 
 // weather?lat=35&lon=139
+
+
+// Developer: Sunjay Kumar (Sunny)
