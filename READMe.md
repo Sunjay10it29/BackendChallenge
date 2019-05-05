@@ -24,8 +24,7 @@ https://github.com/punkave/backend-challenge
 
 - listening port 3000 (localhost:3000/api/v1/stations)
 - localhost:3000/api/v1/stations/3006/?from=2019-04-30T16:29:39.771Z&to=2019-04-30T16:46:47.771Z
-- localhost:3000/api/v1/stations/3006/?from=2019-04-30T16:29:39.771Z&to=2019-04-30T16:46:47.771Z
-
+- localhost:3000/api/v1/stations/kioskId/?from=timestamp&to=timestamp
 #### Author
 - Sunjay Kumar
 - This has been developed for Test Purpose
